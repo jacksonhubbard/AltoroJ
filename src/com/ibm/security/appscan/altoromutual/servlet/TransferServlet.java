@@ -20,11 +20,11 @@ package com.ibm.security.appscan.altoromutual.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import com.ibm.security.appscan.altoromutual.util.OperationsUtil;
 import com.ibm.security.appscan.altoromutual.util.ServletUtil;
@@ -51,7 +51,7 @@ public class TransferServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		if(!ServletUtil.isLoggedin(request)){
+		if(!ServletUtil.isLoggedin((javax.servlet.http.HttpServletRequest) request)){
 			response.sendRedirect("login.jsp");
 			return ;
 		}
@@ -60,7 +60,7 @@ public class TransferServlet extends HttpServlet {
 		double amount = Double.valueOf(request.getParameter("transferAmount"));
 		
 		
-		String message = OperationsUtil.doServletTransfer(request,creditActId,accountIdString,amount);
+		String message = OperationsUtil.doServletTransfer((javax.servlet.http.HttpServletRequest) request,creditActId,accountIdString,amount);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("transfer.jsp");
 		request.setAttribute("message", message);

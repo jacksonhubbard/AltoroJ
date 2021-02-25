@@ -39,7 +39,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.commons.lang.StringEscapeUtils;
+//import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
+
 import org.apache.wink.json4j.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

@@ -51,7 +51,7 @@ public class TransferServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		if(!ServletUtil.isLoggedin((javax.servlet.http.HttpServletRequest) request)){
+		if(!ServletUtil.isLoggedin((jakarta.servlet.http.HttpServletRequest) request)){
 			response.sendRedirect("login.jsp");
 			return ;
 		}
@@ -60,7 +60,7 @@ public class TransferServlet extends HttpServlet {
 		double amount = Double.valueOf(request.getParameter("transferAmount"));
 		
 		
-		String message = OperationsUtil.doServletTransfer((javax.servlet.http.HttpServletRequest) request,creditActId,accountIdString,amount);
+		String message = OperationsUtil.doServletTransfer((jakarta.servlet.http.HttpServletRequest) request,creditActId,accountIdString,amount);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("transfer.jsp");
 		request.setAttribute("message", message);

@@ -37,7 +37,7 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import jakarta.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.wink.json4j.JSONObject;
